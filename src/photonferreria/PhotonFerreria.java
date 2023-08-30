@@ -15,7 +15,7 @@ public class PhotonFerreria {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String test = "Never gonna give you up";
+        String test = "Never gonna give you up.";
         System.out.println(test);
     }
     
