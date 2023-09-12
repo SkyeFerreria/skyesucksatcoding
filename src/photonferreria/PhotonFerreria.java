@@ -11,12 +11,14 @@ package photonferreria;
  */
 public class PhotonFerreria {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        String test = "Never gonna give you up.";
-        System.out.println(test);
+    public static void main(String[] args){
+        Person bro = new Person("Mark",33,1000000);
+        bro.introduce();
+        double bromoney = bro.getMoney();
+        System.out.println(bromoney);
+        bromoney = bro.getMoney();
+        System.out.println(bromoney);
     }
+    
     
 }
