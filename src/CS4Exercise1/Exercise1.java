@@ -29,7 +29,7 @@ public class Exercise1 {
         
         int TotalBannerPulls = PullsObtained1 + PullsObtained3;
         boolean KafkaxHimeko = (PullsObtained2 >= PullsObtained3);
-        boolean TypeComparison = (ElementType1 == ElementType2);
+        boolean TypeComparison = (ElementType1.equals(ElementType2));
         
         System.out.println("Character 1\nName: " + Charname1 + "\nElement: " + ElementType1 + "\nNo. of pulls: " + PullsObtained1 + "\n\nCharacter 2\nName: " + Charname2 + "\nElement: " + ElementType2 + "\nNo. of pulls: " + PullsObtained2 + "\n\nCharacter 3\nName: " + Charname3 + "\nElement: " + ElementType3 + "\nNo. of pulls: " + PullsObtained3 + "\n\nTotal Standard Banner Pulls to get Clara and Himeko: " + TotalBannerPulls + "\nIt took more pulls to get Kafka than pulls to get Himeko: " + KafkaxHimeko + "\nClara and Kafka use the same element: " + TypeComparison);
     }
