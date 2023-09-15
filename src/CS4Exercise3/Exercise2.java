@@ -4,8 +4,6 @@
  */
 package CS4Exercise3;
 
-import CS4Exercise2.*;
-
 /**
  *
  * @author PHOTON
@@ -21,6 +19,7 @@ public class Exercise2 {
         Singer singer = new Singer("Zild",0,0);
         Song favSong = new Song("Come Inside of My Heart");
         Song newFavSong = new Song("Lunes Na Naman");
+        Singer singer2 = new Singer("EHeads",0,0);
         
         singer.changeFavSong(favSong);
         singer.performForAudience(12);
