@@ -4,17 +4,31 @@
  */
 package CS4Exercise3;
 
-import CS4Exercise2.*;
-
 /**
  *
  * @author PHOTON
  */
 public class Song {
     
-    String song;
+    private String song;
     Song (String song){
         this.song = song;
     }
+
+    /**
+     * @return the song
+     */
+    public String getSong() {
+        return song;
+    }
+
+    /**
+     * @param song the song to set
+     */
+    public void setSong(String song) {
+        this.song = song;
+    }
+    
+    
     
 }
