@@ -93,7 +93,7 @@ public class Singer {
     public void setFavoriteSong(Song favoriteSong) {
         this.favoriteSong = favoriteSong;
     }
-    
+
     
     
 }
