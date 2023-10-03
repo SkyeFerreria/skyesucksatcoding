@@ -12,11 +12,14 @@ public class RockPaperScissors{
 		paper.setStrongAgainst(rock);
 		scissors.setStrongAgainst(paper);
 		
+                int looper = 1;
 		int roundsToWin = 2;
                 int ingame = 0;
+                int playerScore = 0 ;
+                int computerScore = 0;
                 
                 Scanner game = new Scanner(System.in);
-		
+		while(looper == 1){
                 while(ingame == 0){
 		System.out.println("Welcome to Rock, Paper, Scissors. Please choose an option:\n1. Start Game\n2. Change number of rounds\n3. Exit Application"); 
                 int mainmenu = game.nextInt();
@@ -28,8 +31,8 @@ public class RockPaperScissors{
                 switch(mainmenu){
                     case 1:
                         System.out.println("\nThis match will be first to " + roundsToWin + " wins.");
-                int playerScore = 0 ;
-                int computerScore = 0;
+                playerScore = 0 ;
+                computerScore = 0;
                 ingame = 1;
                 break;
                     case 2:
@@ -50,8 +53,68 @@ public class RockPaperScissors{
                 while(ingame == 1){
                    System.out.println("The computer has selected its move. Select your move:\n1. Rock\n2. Paper\n3. Scissors");
                    int player = game.nextInt();
+                   while (player > 3 || player < 1){
+                   System.out.println("Invalid input. Please put a number from 1 to 3.");
+                   player = game.nextInt();
+                   }
                    int random = (int) Math.floor(Math.random()*3) + 1;
                   
+                   switch(player){
+                       case 1:
+                           switch (random){
+                               case 1:
+                                   System.out.println("Player chose Rock. Computer chose Rock. Round is tied!\nPlayer: " + playerScore + " Computer: " + computerScore + "\n");
+                                   break;
+                               case 2:
+                                   System.out.println("Player chose Rock. Computer chose Paper. Computer wins round!");
+                                   computerScore += 1;
+                                   System.out.println("Player: " + playerScore + " Computer: " + computerScore + "\n");
+                                   break;
+                               case 3:
+                                   System.out.println("Player chose Rock. Computer chose Scissors. Player wins round!");
+                                   playerScore += 1;
+                                   System.out.println("Player: " + playerScore + " Computer: " + computerScore + "\n");
+                                   break;
+                           }
+                           break;
+                           case 2:
+                           switch (random){
+                               case 1:
+                                   System.out.println("Player chose Paper. Computer chose Rock. Player wins round!");
+                                   playerScore += 1;
+                                   System.out.println("Player: " + playerScore + " Computer: " + computerScore + "\n");
+                                   break;
+                               case 2:
+                                   System.out.println("Player chose Paper. Computer chose Paper. Round is tied!\nPlayer: " + playerScore + " Computer: " + computerScore + "\n");
+                                   break;
+                               case 3:
+                                   System.out.println("Player chose Paper. Computer chose Scissors. Computer wins round!");
+                                   computerScore += 1;
+                                   System.out.println("Player: " + playerScore + " Computer: " + computerScore + "\n");
+                                   break;
+                           }
+                           break;
+                           case 3:
+                           switch (random){
+                               case 1:
+                                   System.out.println("Player chose Scissors. Computer chose Rock. Computer wins round!");
+                                   computerScore += 1;
+                                   System.out.println("Player: " + playerScore + " Computer: " + computerScore + "\n");
+                                   break;
+                               case 2:
+                                   System.out.println("Player chose Scissors. Computer chose Paper. Player wins round!");
+                                   playerScore += 1;
+                                   System.out.println("Player: " + playerScore + " Computer: " + computerScore + "\n");
+                                   break;
+                               case 3:
+                                   System.out.println("Player chose Scissors. Computer chose Scissors. Round is tied!\nPlayer: " + playerScore + " Computer: " + computerScore + "\n");
+                                   break;
+                           }
+                           break;
+                   }
+                   if(playerScore == roundsToWin){System.out.println("Player wins!\n");ingame = 0;}
+                   if(computerScore == roundsToWin){System.out.println("Computer wins!\n");ingame = 0;}
+                }
                 }
 	}
 }
